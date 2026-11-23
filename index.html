@@ -25,11 +25,11 @@ main { width: 100%; max-width: 520px; padding: 28px 20px 40px; }
 .bar i { display: block; height: 100%; width: 0; background: var(--cam); transition: width .6s; }
 h1 { font-size: 34px; line-height: 1.1; font-weight: 500; letter-spacing: -.01em; }
 .lede { margin-top: 12px; font-size: 17px; line-height: 1.45; color: var(--ink2); }
-.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 26px; }
-.tile { position: relative; min-height: 96px; padding: 14px 14px 16px; text-align: left; border: 2px solid var(--rule); border-radius: 12px;
+.tiles { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 26px; }
+.tile { position: relative; min-height: 78px; padding: 14px 14px 16px; text-align: left; border: 2px solid var(--rule); border-radius: 12px;
   background: var(--surface); color: var(--ink); font: 500 21px/1.15 var(--display); cursor: pointer; -webkit-tap-highlight-color: transparent;
   transition: transform .12s, border-color .2s, opacity .3s; }
-.tile b { display: block; font: 500 12px var(--mono); letter-spacing: .12em; color: var(--ink2); margin-bottom: 18px; }
+.tile b { display: block; font: 500 12px var(--mono); letter-spacing: .12em; color: var(--ink2); margin-bottom: 8px; }
 .tile:active { transform: scale(.97); }
 .tile:focus-visible, .send:focus-visible, input:focus-visible, .own button:focus-visible { outline: 3px solid var(--cam); outline-offset: 2px; }
 .tile.picked { border-color: var(--on); }
@@ -126,7 +126,7 @@ footer { margin-top: 14px; font: 400 12px var(--mono); color: var(--ink2); lette
   const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLScO1T-kfw3PB5U17Tu-kGAriGYtY1O8dwZGq8cHUJx-YKEM9w/formResponse';
   const FIELD = { id: 'entry.1635585171', vote: 'entry.63146878', suggestion: 'entry.2129387934',
                   machine: 'entry.2112864373', email: 'entry.738483571' };
-  const NAMES = ['HertzMap', 'Shakeprint', 'PixelPulse', 'VibruSensing'];
+  const NAMES = ['HertzMap', 'ChronoLens', 'VibruSensing'];
   const KEY = 'vibru-vote-v1';
 
   const app = document.getElementById('app'), status = document.getElementById('status');
@@ -151,7 +151,7 @@ footer { margin-top: 14px; font: 400 12px var(--mono); color: var(--ink2); lette
   NAMES.forEach((name, i) => {
     const b = document.createElement('button');
     b.className = 'tile'; b.type = 'button';
-    b.innerHTML = '<b>' + 'ABCD'[i] + '</b>' + name;
+    b.innerHTML = '<b>' + 'ABC'[i] + '</b>' + name;
     b.addEventListener('click', () => vote(name, '', b));
     tiles.appendChild(b);
   });
